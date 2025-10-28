@@ -8,7 +8,7 @@ export default function Catalogue() {
     useEffect(() => {
         axios
             .get("http://localhost:8000/api/products/")
-            .then((res) => setProducts(res.data))
+            .then((res) => setProducts(res.data.products))
             .catch((err) => console.error(err));
     }, []);
 
