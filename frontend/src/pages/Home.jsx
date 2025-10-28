@@ -1,10 +1,12 @@
 export default function Home() {
     return (
-        <div className="text-center p-8">
-            <h1 className="text-4xl font-bold mb-4">
-                Bienvenue sur notre boutique
+        <div className="text-center p-5">
+            <h1 className="fw-bold mb-4 display-4">
+                IPSSI - Bienvenue sur notre boutique
             </h1>
-            <p>Découvrez notre sélection de produits par catégorie et prix.</p>
+            <p className="lead">
+                Découvrez notre sélection de produits par catégorie et prix.
+            </p>
         </div>
     );
 }

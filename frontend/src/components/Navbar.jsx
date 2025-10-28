@@ -2,13 +2,21 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
     return (
-        <nav className="flex justify-between items-center p-4 bg-gray-100 shadow">
-            <Link to="/" className="font-bold text-lg">
-                Ma Boutique
-            </Link>
-            <div className="space-x-4">
-                <Link to="/">Accueil</Link>
-                <Link to="/catalogue">Catalogue</Link>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+            <div className="container">
+                <Link to="/" className="navbar-brand fw-bold">
+                    IPPSI Boutique
+                </Link>
+                <div className="collapse navbar-collapse">
+                    <div className="navbar-nav ms-auto">
+                        <Link to="/" className="nav-link">
+                            Accueil
+                        </Link>
+                        <Link to="/catalogue" className="nav-link">
+                            Catalogue
+                        </Link>
+                    </div>
+                </div>
             </div>
         </nav>
     );

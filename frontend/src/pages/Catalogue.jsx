@@ -13,21 +13,32 @@ export default function Catalogue() {
     }, []);
 
     return (
-        <div className="p-4">
-            <h1>Catalogue des produits</h1>
-            <div className="grid grid-cols-3 gap-4">
+        <div className="container my-4">
+            <h1 className="mb-4">Catalogue des produits</h1>
+            <div className="row g-4">
                 {products.map((p) => (
-                    <Link key={p.id} to={`/product/${p.id}`}>
-                        <div className="border p-2 rounded-lg shadow">
-                            <img
-                                src={p.image}
-                                alt={p.name}
-                                className="w-full h-40 object-cover"
-                            />
-                            <h2>{p.name}</h2>
-                            <p>{p.price} €</p>
-                        </div>
-                    </Link>
+                    <div key={p.id} className="col-md-4">
+                        <Link
+                            to={`/product/${p.id}`}
+                            className="text-decoration-none text-dark"
+                        >
+                            <div className="card h-100">
+                                <img
+                                    src={`http://localhost:8000${p.image}`}
+                                    alt={p.name}
+                                    className="card-img-top"
+                                    style={{
+                                        height: "200px",
+                                        objectFit: "cover",
+                                    }}
+                                />
+                                <div className="card-body">
+                                    <h5 className="card-title">{p.name}</h5>
+                                    <p className="card-text">{p.price} €</p>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
                 ))}
             </div>
         </div>
