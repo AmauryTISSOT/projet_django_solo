@@ -1,8 +1,8 @@
-from django_filters import rest_framework as filter
+from django_filters import rest_framework as filters
 from .models import Product
 
 
-class ProductsFilter(filter.filterset):
+class ProductsFilter(filters.FilterSet):
     class Meta:
         model = Product
-        fields = "category"
+        fields = ["category"]

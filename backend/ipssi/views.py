@@ -9,13 +9,15 @@ from .filters import ProductsFilter
 
 @api_view(["GET"])
 def get_products(request):
-    filterset = ProductsFilter(request.GET, queryset=Product.objects.all().order_by(id))
+    filterset = ProductsFilter(
+        request.GET, queryset=Product.objects.all().order_by("id")
+    )
     serializer = ProductSerializer(filterset.qs, many=True)
     return Response({"products": serializer.data})
 
 
 @api_view(["GET"])
-def get_products(request, pk):
+def get_product_by_id(request, pk):
     product = get_object_or_404(Product, id=pk)
-    seriliazer = ProductSerializer(product, many=False)
-    return Response({"product": seriliazer.data})
+    serializer = ProductSerializer(product, many=False)
+    return Response({"product": serializer.data})
